@@ -28,15 +28,34 @@ function askQuestion() {
 
 console.log(`Correct Answer: ${correctAnswers[i]}`)
  }
+ 
  }
 
 function gradeQuiz(candidateAnswers) {
+let grade=0;
+let numOfCorrectAnswers= 0
+for(let i=0;i<questions.length;i++)
+{
+let lowerCaseCandidateAnswers=candidateAnswers[i].toLowerCase()
+let lowerCaseCorrectAnswers=correctAnswers[i].toLowerCase()  
+if(lowerCaseCandidateAnswers===lowerCaseCorrectAnswers)
+{
+ numOfCorrectAnswers +=1;
+ 
+}
+}
+grade=(numOfCorrectAnswers/questions.length)*100
+let status=''
+if(grade>=80){
+  status='PASS'
+  }
+else{
+  status='FAILED'
+}
 
-
-  let grade;
-  
-
-  return grade;
+console.log(`\n>>> Overall Grade: ${grade}% (${numOfCorrectAnswers} of ${questions.length} responses correct) <<<`)
+console.log(`>>> Status: ${status} <<<`)
+return grade;
 }
 
 function runProgram() {
