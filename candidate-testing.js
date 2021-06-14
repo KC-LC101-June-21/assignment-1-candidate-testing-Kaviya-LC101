@@ -54,7 +54,7 @@ else{
 }
 
 console.log(`\n>>> Overall Grade: ${grade}% (${numOfCorrectAnswers} of ${questions.length} responses correct) <<<`)
-console.log(`>>> Status: ${status} <<<`)
+console.log(`>>> Status: ${status} <<< `)
 return grade;
 }
 
